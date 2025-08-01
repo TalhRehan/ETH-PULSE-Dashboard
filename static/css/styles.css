@@ -1,0 +1,161 @@
+body {
+    background-color: #0a0a0f;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    padding: 30px;
+}
+.hashtag {
+    color: #6F42C1;
+    margin-right: 15px;
+}
+.glowing-stream-placeholder {
+    width: 980px;
+    height: 750px;
+    background-color: #1f1f2e;
+    border: 2px dashed #6F42C1;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.control-panel {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #14141f;
+    border: 1px solid #6F42C1;
+    border-radius: 10px;
+}
+///////////////////////////////
+body.night {
+    background-color: #0a0a0f;
+    color: white;
+}
+
+body.day {
+    background-color: #ffffff;
+    color: #222222;
+}
+
+.hashtag {
+    color: #6F42C1;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+.control-panel {
+    margin-top: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(100, 100, 160, 0.15);
+    border: 1px solid #6F42C1;
+}
+
+button {
+    margin-right: 10px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    background-color: #6F42C1;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #5b34a3;
+}
+
+select {
+    margin: 0 10px;
+    padding: 5px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+.charts-section {
+    margin-top: 30px;
+}
+
+.chart-box {
+    height: 250px;
+    background-color: #151522;
+    border: 1px dashed #6F42C1;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Tweet Cards */
+.tweet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.tweet-card {
+    display: flex;
+    gap: 12px;
+    padding: 15px;
+    background-color: rgba(40, 20, 60, 0.6);
+    border: 2px solid #8224e3;
+    box-shadow: 0 0 10px #6F42C1, 0 0 20px #de25da;
+    border-radius: 15px;
+}
+
+.tweet-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #6F42C1;
+}
+
+.tweet-content {
+    flex: 1;
+}
+
+.tweet-user {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.tweet-text {
+    color: #ccc;
+    font-size: 14px;
+}
+
+.tweet-meta {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #aaaaaa;
+    display: flex;
+    justify-content: space-between;
+}
+
+.sentiment-badge {
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+    color: white;
+    font-size: 12px;
+}
+
+.sentiment-badge.positive {
+    background-color: #22bb33;
+}
+.sentiment-badge.negative {
+    background-color: #bb2233;
+}
+.sentiment-badge.neutral {
+    background-color: #888888;
+}
+

@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Real-Time Ethereum Sentiment Pulse</h1>
+<h3>Visualizing Global Buzz in Ethereum Purple. Tron Glow.</h3>
+
+<form method="post" class="control-panel">
+    <p><strong>Status:</strong> {{ '🛑 Stream Paused' if paused else '🟢 Streaming Live' }}</p>
+
+    <!-- Pause Toggle -->
+    <button name="toggle_pause" type="submit">
+        {{ '▶ Resume' if paused else '⏸ Pause' }}
+    </button>
+
+    <!-- Viz Mode -->
+    <label for="viz_mode"><strong>Viz Mode:</strong></label>
+    <select name="viz_mode" id="viz_mode" onchange="this.form.submit()">
+        <option value="tron" {% if viz_mode == 'tron' %}selected{% endif %}>Tron</option>
+        <option value="classic" {% if viz_mode == 'classic' %}selected{% endif %}>Classic</option>
+    </select>
+
+    <!-- Theme Mode -->
+    <label for="theme_mode"><strong>Theme:</strong></label>
+    <select name="theme_mode" id="theme_mode" onchange="this.form.submit()">
+        <option value="night" {% if theme_mode == 'night' %}selected{% endif %}>🌙 Night</option>
+        <option value="day" {% if theme_mode == 'day' %}selected{% endif %}>☀️ Day</option>
+    </select>
+
+    <!-- Top Hashtags -->
+    <div style="margin-top: 15px;">
+        <strong>Top Hashtags:</strong>
+        {% for tag in top_hashtags %}
+            <span class="hashtag">{{ tag }}</span>
+        {% endfor %}
+    </div>
+</form>
+
+
+<!-- Placeholder for Glowing Stream Viz -->
+<div class="glowing-stream-placeholder">
+  <p>🔮 Glowing Stream Visualization Placeholder (980x750)</p>
+</div>
+<div class="charts-section">
+  <h3>📊 Buzz Density</h3>
+<div class="chart-box">
+  {{ trend_chart_html | safe }}
+</div>
+
+  <h3>📈 Sentiment Forecast (Next 5 Mins)</h3>
+  <div class="chart-box">
+  {{ forecast_chart_html | safe }}
+</div>
+
+
+  <h3>💰 ETH Price Trend</h3>
+  <div class="chart-box">
+  {{ eth_chart_html | safe }}
+</div>
+</div>
+<h3 style="margin-top: 40px;">🔥 High-Impact Buzz</h3>
+<div class="tweet-grid">
+{% for tweet in recent_tweets %}
+  <div class="tweet-card">
+    <img src="{{ tweet.avatar }}" class="tweet-avatar" alt="Avatar">
+    <div class="tweet-content">
+      <div class="tweet-user">@{{ tweet.user_screen_name }}</div>
+      <div class="tweet-text">{{ tweet.text }}</div>
+      <div class="tweet-meta">
+        <span class="sentiment-badge {{ tweet.sentiment|lower }}">{{ tweet.sentiment.capitalize() }}</span>
+        <span class="tweet-impact">Impact: {{ tweet.impact }}</span>
+      </div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+
+{% endblock %}
